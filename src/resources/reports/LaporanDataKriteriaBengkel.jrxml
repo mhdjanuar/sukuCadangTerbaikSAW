@@ -104,15 +104,15 @@
 					<text><![CDATA[S59GARAGE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="142" y="51" width="310" height="20" forecolor="#000000" uuid="8f4c8fe0-8216-4a97-9060-9c59ce5ab0fa"/>
+					<reportElement x="162" y="51" width="310" height="20" forecolor="#000000" uuid="8f4c8fe0-8216-4a97-9060-9c59ce5ab0fa"/>
 					<textElement>
 						<font fontName="Times New Roman"/>
 					</textElement>
-					<text><![CDATA[Jl. Raya Bogor Cililitan No.20, RT.1/RW.15, Cililitan, Kec. Kramat jati]]></text>
+					<text><![CDATA[Jl. Jati Bening II blok G No 81, Jatibening Baru, Kec. Pd. Gede]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="153" y="71" width="267" height="20" forecolor="#000000" uuid="d328ae76-e696-4871-931b-5648e5e00920"/>
-					<text><![CDATA[Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13640]]></text>
+					<reportElement x="210" y="71" width="267" height="20" forecolor="#000000" uuid="d328ae76-e696-4871-931b-5648e5e00920"/>
+					<text><![CDATA[Kota Bekasi, Jawa Barat 17412]]></text>
 				</staticText>
 				<image>
 					<reportElement x="40" y="0" width="120" height="120" uuid="3de58414-6ae4-40eb-89ad-9869ff48c0fc"/>
@@ -255,7 +255,7 @@
 				<textElement textAlignment="Right">
 					<paragraph rightIndent="10"/>
 				</textElement>
-				<text><![CDATA[ Sri Mulyati]]></text>
+				<text><![CDATA[ Rafly]]></text>
 			</staticText>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="0" y="150" width="90" height="19" uuid="f23b9681-bac7-46a4-8734-9de3082e7110">

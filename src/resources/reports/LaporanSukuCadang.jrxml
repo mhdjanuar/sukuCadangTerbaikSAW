@@ -77,7 +77,7 @@
 	<pageHeader>
 		<band height="80" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="-30" width="595" height="110" forecolor="#FFFCFC" backcolor="#FFFFFF" uuid="193c952d-de2a-4065-92fd-8881dcb0ec97"/>
+				<reportElement mode="Opaque" x="-20" y="-30" width="595" height="110" forecolor="#FFFCFC" backcolor="#FFFFFF" uuid="342e97e8-1c75-459e-af78-36180d6d006e"/>
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#0A0A0A"/>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0A0A0A"/>
@@ -86,7 +86,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<staticText>
-					<reportElement x="110" y="21" width="350" height="30" forecolor="#000000" uuid="9163def1-b48e-4f14-9f2b-b9d367a98ccd"/>
+					<reportElement x="110" y="21" width="350" height="30" forecolor="#000000" uuid="f99744a1-56cd-4f60-9389-a73b3072abb2"/>
 					<textElement textAlignment="Center">
 						<font fontName="Times New Roman" size="20" isBold="true"/>
 						<paragraph lineSpacingSize="1.0"/>
@@ -94,15 +94,15 @@
 					<text><![CDATA[S59GARAGE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="142" y="51" width="310" height="20" forecolor="#000000" uuid="b292197d-6bac-4ed3-bd69-bd7df8e1b666"/>
+					<reportElement x="162" y="51" width="310" height="20" forecolor="#000000" uuid="8f4c8fe0-8216-4a97-9060-9c59ce5ab0fa"/>
 					<textElement>
 						<font fontName="Times New Roman"/>
 					</textElement>
-					<text><![CDATA[Jl. Raya Bogor Cililitan No.20, RT.1/RW.15, Cililitan, Kec. Kramat jati]]></text>
+					<text><![CDATA[Jl. Jati Bening II blok G No 81, Jatibening Baru, Kec. Pd. Gede]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="153" y="71" width="267" height="20" forecolor="#000000" uuid="4660e658-ed40-4ad1-b6ca-61775b22023d"/>
-					<text><![CDATA[Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13640]]></text>
+					<reportElement x="210" y="71" width="267" height="20" forecolor="#000000" uuid="d328ae76-e696-4871-931b-5648e5e00920"/>
+					<text><![CDATA[Kota Bekasi, Jawa Barat 17412]]></text>
 				</staticText>
 				<image>
 					<reportElement x="40" y="0" width="120" height="120" uuid="3de58414-6ae4-40eb-89ad-9869ff48c0fc"/>
