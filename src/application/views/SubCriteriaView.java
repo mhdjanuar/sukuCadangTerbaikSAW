@@ -379,7 +379,7 @@ public class SubCriteriaView extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
          try {
-            String templateName = "LaporanSubKriteria.jrxml";
+            String templateName = "LaporanSubKriteriaBengkel.jrxml";
             InputStream reportStream = ReportView.class.getResourceAsStream("/resources/reports/" + templateName);
             JasperDesign jd = JRXmlLoader.load(reportStream);
 

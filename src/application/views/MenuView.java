@@ -86,7 +86,7 @@ public class MenuView extends javax.swing.JFrame {
         // Panel utama
         jPanel1.setLayout(new BorderLayout()); // penting supaya anak komponen fleksibel ukurannya
 
-        Sidebar.setBackground(Color.decode("#FF0000")); // hex for black
+        Sidebar.setBackground(Color.decode("#67e332")); // hex for black
         Sidebar.setPreferredSize(new Dimension(250, 0)); // 200px lebar, tinggi otomatis
         jPanel1.add(Sidebar, BorderLayout.WEST);
         
@@ -230,7 +230,7 @@ public class MenuView extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/bengkel-200.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/image-200.png"))); // NOI18N
 
         perhitunganSPK.setBackground(new java.awt.Color(0, 0, 0));
         perhitunganSPK.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

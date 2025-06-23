@@ -35,7 +35,7 @@
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL"/>
 		<queryString language="SQL">
 			<![CDATA[SELECT 
-    p.nama AS nama_pelanggan,
+    p.name AS nama_pelanggan,
     ROUND(SUM(
         CASE 
             WHEN c.type = 'benefit' THEN (sc.jumlah_bobot / pembagi_table.pembagi) * (c.bobot / total_weight.total)
@@ -50,10 +50,10 @@
             END
         ) DESC
     ) AS peringkat
-FROM pemilihan_peserta_saw.alternatif AS a
-JOIN pemilihan_peserta_saw.peserta AS p ON a.id_peserta = p.id
-JOIN pemilihan_peserta_saw.sub_criteria AS sc ON a.id_sub_kreteria = sc.id
-JOIN pemilihan_peserta_saw.criteria AS c ON sc.id_kreteria = c.id
+FROM saw_suku_cadang_terbaik.alternatif AS a
+JOIN saw_suku_cadang_terbaik.spare_parts AS p ON a.id_spare_part = p.id
+JOIN saw_suku_cadang_terbaik.sub_criteria AS sc ON a.id_sub_kreteria = sc.id
+JOIN saw_suku_cadang_terbaik.criteria AS c ON sc.id_kreteria = c.id
 
 -- Subquery untuk menghitung nilai pembagi tiap kriteria
 JOIN (
@@ -63,24 +63,24 @@ JOIN (
             WHEN c.type = 'benefit' THEN MAX(sc.jumlah_bobot)
             WHEN c.type = 'cost' THEN MIN(sc.jumlah_bobot)
         END AS pembagi
-    FROM pemilihan_peserta_saw.alternatif AS a
-    JOIN pemilihan_peserta_saw.sub_criteria AS sc ON a.id_sub_kreteria = sc.id
-    JOIN pemilihan_peserta_saw.criteria AS c ON sc.id_kreteria = c.id
+    FROM saw_suku_cadang_terbaik.alternatif AS a
+    JOIN saw_suku_cadang_terbaik.sub_criteria AS sc ON a.id_sub_kreteria = sc.id
+    JOIN saw_suku_cadang_terbaik.criteria AS c ON sc.id_kreteria = c.id
     GROUP BY c.id, c.type
 ) AS pembagi_table ON pembagi_table.id_kriteria = c.id
 
 -- Subquery untuk total bobot
 JOIN (
-    SELECT SUM(bobot) AS total FROM pemilihan_peserta_saw.criteria
+    SELECT SUM(bobot) AS total FROM saw_suku_cadang_terbaik.criteria
 ) AS total_weight
 
-GROUP BY p.nama
+GROUP BY p.name
 ORDER BY total_nilai DESC;]]>
 		</queryString>
 		<field name="nama_pelanggan" class="java.lang.String">
-			<property name="com.jaspersoft.studio.field.name" value="nama"/>
+			<property name="com.jaspersoft.studio.field.name" value="name"/>
 			<property name="com.jaspersoft.studio.field.label" value="nama_pelanggan"/>
-			<property name="com.jaspersoft.studio.field.tree.path" value="peserta"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="spare_parts"/>
 		</field>
 		<field name="total_nilai" class="java.math.BigDecimal">
 			<property name="com.jaspersoft.studio.field.name" value="total_nilai"/>
@@ -93,7 +93,7 @@ ORDER BY total_nilai DESC;]]>
 	</subDataset>
 	<parameter name="PATH" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[select * from pemilihan_peserta_saw.users limit 1]]>
+		<![CDATA[select * from saw_suku_cadang_terbaik.users limit 1]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -131,7 +131,7 @@ ORDER BY total_nilai DESC;]]>
 	<pageHeader>
 		<band height="80" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="-30" width="595" height="110" forecolor="#FFFCFC" backcolor="#FFFFFF" uuid="342e97e8-1c75-459e-af78-36180d6d006e"/>
+				<reportElement mode="Opaque" x="-20" y="-30" width="595" height="110" forecolor="#FFFCFC" backcolor="#FFFFFF" uuid="69b3de13-7b9b-4082-8991-61bb5a25a635"/>
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#0A0A0A"/>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0A0A0A"/>
@@ -140,27 +140,27 @@ ORDER BY total_nilai DESC;]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<staticText>
-					<reportElement x="110" y="21" width="350" height="30" forecolor="#000000" uuid="f99744a1-56cd-4f60-9389-a73b3072abb2"/>
+					<reportElement x="110" y="21" width="350" height="30" forecolor="#000000" uuid="43b82d9d-87b0-4ca4-8367-ee01deeb5200"/>
 					<textElement textAlignment="Center">
 						<font fontName="Times New Roman" size="20" isBold="true"/>
 						<paragraph lineSpacingSize="1.0"/>
 					</textElement>
-					<text><![CDATA[JULIANA JAYA]]></text>
+					<text><![CDATA[S59GARAGE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="142" y="51" width="310" height="20" forecolor="#000000" uuid="8f4c8fe0-8216-4a97-9060-9c59ce5ab0fa"/>
+					<reportElement x="142" y="51" width="310" height="20" forecolor="#000000" uuid="a2fd5d08-8c5d-4b00-b93f-2aec25aa8513"/>
 					<textElement>
 						<font fontName="Times New Roman"/>
 					</textElement>
 					<text><![CDATA[Jl. Raya Bogor Cililitan No.20, RT.1/RW.15, Cililitan, Kec. Kramat jati]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="153" y="71" width="267" height="20" forecolor="#000000" uuid="d328ae76-e696-4871-931b-5648e5e00920"/>
+					<reportElement x="153" y="71" width="267" height="20" forecolor="#000000" uuid="3402d6ac-53a4-40fd-9ee8-7b9e4411815e"/>
 					<text><![CDATA[Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13640]]></text>
 				</staticText>
 				<image>
-					<reportElement x="40" y="25" width="50" height="50" uuid="23d5bb3f-e081-4190-9f1d-1a95495589ee"/>
-                                        <imageExpression><![CDATA[$P{PATH}+"pelatihan.jpg"]]></imageExpression>
+					<reportElement x="40" y="0" width="120" height="120" uuid="3de58414-6ae4-40eb-89ad-9869ff48c0fc"/>
+					<imageExpression><![CDATA[$P{PATH}+"image-200.png"]]></imageExpression>
 				</image>
 			</frame>
 		</band>
@@ -172,7 +172,7 @@ ORDER BY total_nilai DESC;]]>
 				<textElement textAlignment="Center">
 					<font size="20" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Laporan Ranking]]></text>
+				<text><![CDATA[Laporan Rangking]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -248,7 +248,7 @@ ORDER BY total_nilai DESC;]]>
 								<textElement textAlignment="Center">
 									<paragraph spacingBefore="10"/>
 								</textElement>
-								<text><![CDATA[Ranking]]></text>
+								<text><![CDATA[Rangking]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
@@ -270,7 +270,7 @@ ORDER BY total_nilai DESC;]]>
 	<pageFooter>
 		<band height="154" splitType="Stretch">
 			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="-20" y="20" width="594" height="19" uuid="8cb9f943-9650-46e5-8035-a39e46cf3002">
+				<reportElement x="-20" y="20" width="594" height="19" uuid="d093389b-7d63-4f53-bdf0-0c0e770f3685">
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
@@ -279,24 +279,24 @@ ORDER BY total_nilai DESC;]]>
 				<textFieldExpression><![CDATA["Jakarta, " + new java.text.SimpleDateFormat("EEEE, dd MMMM yyyy", new java.util.Locale("id", "ID")).format(new java.util.Date())]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="460" y="50" width="124" height="19" uuid="f0ced513-a1fd-4151-989f-a5e088d9ace2">
+				<reportElement x="-18" y="50" width="588" height="19" uuid="eb053141-2c5a-4e41-b523-b11ceb30ca0c">
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Center">
+				<textElement textAlignment="Right">
 					<font isBold="true"/>
 					<paragraph rightIndent="40"/>
 				</textElement>
-				<text><![CDATA[Kepala Cabang]]></text>
+				<text><![CDATA[HRD]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="470" y="130" width="67" height="24" uuid="0f33c143-b6c6-48b7-90cd-5a576099e461">
+				<reportElement x="-18" y="130" width="560" height="24" uuid="727c6684-29ff-4c16-92e7-de6f3e2c2382">
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
 					<paragraph rightIndent="10"/>
 				</textElement>
-				<text><![CDATA[ Sri Mulyati]]></text>
+				<text><![CDATA[Rafly]]></text>
 			</staticText>
 		</band>
 	</pageFooter>

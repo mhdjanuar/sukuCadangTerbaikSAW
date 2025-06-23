@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LaporanDataKriteria" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f3a401b4-bf49-4b3a-98c8-85e01251652b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LaporanSubKriteria" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e6645130-0a27-49a2-826f-03d62c1ec82f">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
@@ -30,13 +30,34 @@
 			<rightPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<subDataset name="Kriteria" uuid="825238aa-6c6a-47b9-8782-ba0bcf00bc52">
+	<subDataset name="SubKriteria" uuid="04086c30-05c1-4b51-9724-f80a0c0513bb">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL"/>
 		<queryString language="SQL">
-			<![CDATA[select * from  pemilihan_peserta_saw.criteria]]>
+			<![CDATA[select * from  saw_suku_cadang_terbaik.sub_criteria as sc 
+inner join saw_suku_cadang_terbaik.criteria as c on sc.id_kreteria = c.id]]>
 		</queryString>
 		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="id"/>
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sub_criteria"/>
+		</field>
+		<field name="id_kreteria" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="id_kreteria"/>
+			<property name="com.jaspersoft.studio.field.label" value="id_kreteria"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sub_criteria"/>
+		</field>
+		<field name="jumlah_bobot" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="jumlah_bobot"/>
+			<property name="com.jaspersoft.studio.field.label" value="jumlah_bobot"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sub_criteria"/>
+		</field>
+		<field name="deskripsi" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="deskripsi"/>
+			<property name="com.jaspersoft.studio.field.label" value="deskripsi"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sub_criteria"/>
+		</field>
+		<field name="COLUMN_5" class="java.lang.Integer">
 			<property name="com.jaspersoft.studio.field.name" value="id"/>
 			<property name="com.jaspersoft.studio.field.label" value="id"/>
 			<property name="com.jaspersoft.studio.field.tree.path" value="criteria"/>
@@ -59,27 +80,27 @@
 	</subDataset>
 	<parameter name="PATH" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[select * from  pemilihan_peserta_saw.criteria limit 1]]>
+		<![CDATA[select * from  saw_suku_cadang_terbaik.sub_criteria limit 1]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="criteria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sub_criteria"/>
 	</field>
-	<field name="nama" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="nama"/>
-		<property name="com.jaspersoft.studio.field.label" value="nama"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="criteria"/>
+	<field name="id_kreteria" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_kreteria"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_kreteria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sub_criteria"/>
 	</field>
-	<field name="type" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="type"/>
-		<property name="com.jaspersoft.studio.field.label" value="type"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="criteria"/>
+	<field name="jumlah_bobot" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="jumlah_bobot"/>
+		<property name="com.jaspersoft.studio.field.label" value="jumlah_bobot"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sub_criteria"/>
 	</field>
-	<field name="bobot" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="bobot"/>
-		<property name="com.jaspersoft.studio.field.label" value="bobot"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="criteria"/>
+	<field name="deskripsi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="deskripsi"/>
+		<property name="com.jaspersoft.studio.field.label" value="deskripsi"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sub_criteria"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -87,7 +108,7 @@
 	<pageHeader>
 		<band height="80" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="-30" width="595" height="110" forecolor="#FFFCFC" backcolor="#FFFFFF" uuid="342e97e8-1c75-459e-af78-36180d6d006e"/>
+				<reportElement mode="Opaque" x="-20" y="-30" width="595" height="110" forecolor="#FFFCFC" backcolor="#FFFFFF" uuid="e2798abd-b68d-4a29-9ce6-fe86ccccf6eb"/>
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#0A0A0A"/>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0A0A0A"/>
@@ -96,27 +117,27 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<staticText>
-					<reportElement x="110" y="21" width="350" height="30" forecolor="#000000" uuid="f99744a1-56cd-4f60-9389-a73b3072abb2"/>
+					<reportElement x="110" y="21" width="350" height="30" forecolor="#000000" uuid="f1aa9dbd-9a8c-4163-9b10-c38956369bbc"/>
 					<textElement textAlignment="Center">
 						<font fontName="Times New Roman" size="20" isBold="true"/>
 						<paragraph lineSpacingSize="1.0"/>
 					</textElement>
-					<text><![CDATA[JULIANA JAYA]]></text>
+					<text><![CDATA[S59GARAGE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="142" y="51" width="310" height="20" forecolor="#000000" uuid="8f4c8fe0-8216-4a97-9060-9c59ce5ab0fa"/>
+					<reportElement x="142" y="51" width="310" height="20" forecolor="#000000" uuid="1db8f46d-dcae-4175-8c57-f950c7fe5b7c"/>
 					<textElement>
 						<font fontName="Times New Roman"/>
 					</textElement>
 					<text><![CDATA[Jl. Raya Bogor Cililitan No.20, RT.1/RW.15, Cililitan, Kec. Kramat jati]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="153" y="71" width="267" height="20" forecolor="#000000" uuid="d328ae76-e696-4871-931b-5648e5e00920"/>
+					<reportElement x="153" y="71" width="267" height="20" forecolor="#000000" uuid="b18c681c-915c-4a88-9135-72e9a4269d72"/>
 					<text><![CDATA[Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13640]]></text>
 				</staticText>
 				<image>
-					<reportElement x="40" y="25" width="50" height="50" uuid="23d5bb3f-e081-4190-9f1d-1a95495589ee"/>
-                                        <imageExpression><![CDATA[$P{PATH}+"pelatihan.jpg"]]></imageExpression>
+					<reportElement x="40" y="0" width="120" height="120" uuid="3de58414-6ae4-40eb-89ad-9869ff48c0fc"/>
+					<imageExpression><![CDATA[$P{PATH}+"image-200.png"]]></imageExpression>
 				</image>
 			</frame>
 		</band>
@@ -124,18 +145,18 @@
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="133" y="10" width="288" height="30" forecolor="#000000" uuid="6893943e-f8c9-4307-8b97-a18a5c31c29a"/>
+				<reportElement x="133" y="10" width="288" height="30" uuid="29dc585c-688a-463f-aa4e-7ec0c5d2a48a"/>
 				<textElement textAlignment="Center">
 					<font size="20" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Laporan Data Kriteria]]></text>
+				<text><![CDATA[Laporan Data Sub Kriteria]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="288" splitType="Stretch">
+		<band height="254" splitType="Stretch">
 			<componentElement>
-				<reportElement x="-10" y="10" width="570" height="200" uuid="1a41b339-a05d-4c4e-9077-cf5683dca929">
+				<reportElement x="-8" y="10" width="570" height="200" uuid="01971b53-fcbb-4285-8c4d-ba84aaae6fd0">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
 					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
@@ -144,50 +165,25 @@
 					<property name="com.jaspersoft.studio.components.autoresize.next" value="true"/>
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-					<datasetRun subDataset="Kriteria" uuid="330709d5-5e24-4b6d-972b-8c0c1f10f09a">
+					<datasetRun subDataset="SubKriteria" uuid="3406c8d8-a173-46fc-922d-12db06175ad8">
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:column width="143" uuid="0d0b749f-20ed-4075-bd5c-b71ef733662d">
+					<jr:column width="191" uuid="36c883a5-462c-442d-9b1d-2fa8cadd8cfa">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
 						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="143" height="30" uuid="cc26205f-303a-46bd-9850-a5275dd3ed79">
+								<reportElement x="0" y="0" width="191" height="30" uuid="a2d4fffa-3a6b-47b0-b104-5d53b0ecd610">
 									<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 								</reportElement>
 								<textElement textAlignment="Center">
 									<paragraph spacingBefore="10"/>
 								</textElement>
-								<text><![CDATA[ID]]></text>
+								<text><![CDATA[NAMA KRITERIA]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="143" height="30" uuid="4825928f-00cd-4f51-9c49-a408200fb116">
-									<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
-								</reportElement>
-								<textElement textAlignment="Center">
-									<paragraph spacingBefore="10"/>
-								</textElement>
-								<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-					<jr:column width="143" uuid="05e23adc-10cf-4e1e-83fb-502a6bde26b2">
-						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
-						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement x="0" y="0" width="143" height="30" uuid="3e1d5a59-5cf3-44ef-81d2-52274da92337">
-									<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
-								</reportElement>
-								<textElement textAlignment="Center">
-									<paragraph spacingBefore="10"/>
-								</textElement>
-								<text><![CDATA[NAMA]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:detailCell style="Table_TD" height="30">
-							<textField>
-								<reportElement x="0" y="0" width="143" height="30" uuid="050ef4cc-760e-4098-a15f-afcf124b9cc6">
+								<reportElement x="0" y="0" width="191" height="30" uuid="aa42a397-d91a-4a10-9457-9614084e5db8">
 									<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 								</reportElement>
 								<textElement textAlignment="Center">
@@ -197,36 +193,36 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="142" uuid="02555e34-a4e4-4bf4-b8e0-b21988c18bdb">
-						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+					<jr:column width="190" uuid="1d522291-31e8-4c2d-a4a7-c1d688508fc3">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
 						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="142" height="30" uuid="cf726eba-4d8f-468b-b5c5-bab72b029789">
+								<reportElement x="0" y="0" width="190" height="30" uuid="0c7b6f1b-c75a-43a1-afcd-daf3c11210e8">
 									<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 								</reportElement>
 								<textElement textAlignment="Center">
 									<paragraph spacingBefore="10"/>
 								</textElement>
-								<text><![CDATA[TIPE]]></text>
+								<text><![CDATA[DEKSRIPSI]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="142" height="30" uuid="30bd8b89-5799-4140-a41d-348e16d00579">
+								<reportElement x="0" y="0" width="190" height="30" uuid="a2bbd883-c01a-4efa-82fa-a600a2f5a9ac">
 									<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 								</reportElement>
 								<textElement textAlignment="Center">
 									<paragraph spacingBefore="10"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{deskripsi}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="142" uuid="5395e650-8af1-448d-a09c-56a634d9129c">
-						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+					<jr:column width="189" uuid="81a274ef-ca02-45d4-ab45-6c267c93b327">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
 						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="142" height="30" uuid="03d6e2a3-97fe-4925-bce3-27625ec22db3">
+								<reportElement x="0" y="0" width="189" height="30" uuid="3ed0be98-7732-4cc3-96fd-a90ce8022b59">
 									<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 								</reportElement>
 								<textElement textAlignment="Center">
@@ -237,13 +233,13 @@
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="142" height="30" uuid="037d76ec-2d11-47f4-8d70-aa9d19bf81c0">
+								<reportElement x="0" y="0" width="189" height="30" uuid="2168e5a7-04e4-48d0-a3c8-0f78434a7549">
 									<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
 								</reportElement>
 								<textElement textAlignment="Center">
 									<paragraph spacingBefore="10"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{bobot}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{jumlah_bobot}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -251,10 +247,10 @@
 			</componentElement>
 		</band>
 	</detail>
-	<pageFooter>
+	<columnFooter>
 		<band height="154" splitType="Stretch">
 			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="-20" y="20" width="594" height="19" uuid="8cb9f943-9650-46e5-8035-a39e46cf3002">
+				<reportElement x="-20" y="20" width="594" height="19" uuid="25d105f4-2978-4632-b92c-42d40d9cfd9f">
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
@@ -263,25 +259,25 @@
 				<textFieldExpression><![CDATA["Jakarta, " + new java.text.SimpleDateFormat("EEEE, dd MMMM yyyy", new java.util.Locale("id", "ID")).format(new java.util.Date())]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="460" y="50" width="124" height="19" uuid="f0ced513-a1fd-4151-989f-a5e088d9ace2">
+				<reportElement x="-18" y="50" width="588" height="19" uuid="d6ca43a9-e812-4754-b76b-94d101c5c19b">
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Center">
+				<textElement textAlignment="Right">
 					<font isBold="true"/>
 					<paragraph rightIndent="40"/>
 				</textElement>
-				<text><![CDATA[Kepala Cabang]]></text>
+				<text><![CDATA[HRD]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="470" y="130" width="67" height="24" uuid="0f33c143-b6c6-48b7-90cd-5a576099e461">
+				<reportElement x="-17" y="130" width="561" height="24" uuid="d10d5d80-50d5-442f-a346-8993376c0a28">
 					<property name="com.jaspersoft.studio.unit.spacingBefore" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
 					<paragraph rightIndent="10"/>
 				</textElement>
-				<text><![CDATA[ Sri Mulyati]]></text>
+				<text><![CDATA[Rafly]]></text>
 			</staticText>
 		</band>
-	</pageFooter>
+	</columnFooter>
 </jasperReport>
