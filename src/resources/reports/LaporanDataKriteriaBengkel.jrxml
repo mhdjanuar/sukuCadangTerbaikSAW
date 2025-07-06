@@ -34,7 +34,7 @@
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL"/>
 		<queryString language="SQL">
-			<![CDATA[select * from  pemilihan_peserta_saw.criteria]]>
+			<![CDATA[select * from  saw_suku_cadang_terbaik.criteria]]>
 		</queryString>
 		<field name="id" class="java.lang.Integer">
 			<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -59,7 +59,7 @@
 	</subDataset>
 	<parameter name="PATH" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[select * from  pemilihan_peserta_saw.criteria limit 1]]>
+		<![CDATA[select * from  saw_suku_cadang_terbaik.criteria limit 1]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -255,7 +255,7 @@
 				<textElement textAlignment="Right">
 					<paragraph rightIndent="10"/>
 				</textElement>
-				<text><![CDATA[ Rafly]]></text>
+				<text><![CDATA[ Sri Mulyati]]></text>
 			</staticText>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="0" y="150" width="90" height="19" uuid="f23b9681-bac7-46a4-8734-9de3082e7110">
